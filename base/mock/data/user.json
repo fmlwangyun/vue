@@ -1,0 +1,30 @@
+{
+  "status": true,
+  "errmsg": "ok",
+  "data": {
+    "OpenID": "ojbsl1CzxzPpq9kOlvkaDxeby123",
+    "NickName": "???",
+    "Country": "",
+    "Province": "江苏",
+    "City": "南通市",
+    "HeadImgUrl": "http://vue.rndmed.com//upload/avatars/123420171212175028.jpg",
+    "Mobile": "18303033133",
+    "Language": "",
+    "Name": "suiyue",
+    "Email": "183@qq.com",
+    "Area": "",
+    "Hospital": "启东市第三人民医院",
+    "Department": "外科",
+    "Position": 4,
+    "Sex": 0,
+    "Status": 1,
+    "LicenseImgUrl": "",
+    "License": "121212121212121212121211",
+    "Integral": 917999,
+    "Number": 0,
+    "Code": null,
+    "IsSign": false,
+    "PositionStr": "住院医师",
+    "ID": 31
+  }
+}
