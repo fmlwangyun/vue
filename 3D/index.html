@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>AI简史</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <style>
+        body {
+            font-family: Monospace;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            overflow: hidden;
+        }
+        #info {
+            color: #fff;
+            position: absolute;
+            top: 10px;
+            width: 100%;
+            text-align: center;
+            z-index: 100;
+            display:block;
+        }
+        #info a, .button { color: #f00; font-weight: bold; text-decoration: underline; cursor: pointer }
+        #close_x{
+            width: 3.4rem;height: 3.4rem;font-size: 2.3rem;font-weight: bold;color: #808a9e;position: absolute;
+            top: 0.3rem;left: 0.6rem;padding: 0.4rem;
+        }
+        #close_x img{
+            width: 1.23rem;height: auto;
+        }
+    </style>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+<audio autoplay="autoplay" loop="loop" id="audioMusic">
+    <source src="mp3/Claseria-Friends.mp3">
+</audio>
+<audio id="planeMusic" preload="auto">
+    <source src="mp3/66w888piCAh7.mp3">
+</audio>
+<div id="musicSwich">
+    <img id="musicClose" src="img/musicClose.png?v=120403" alt="">
+    <img id="musicOpen" src="img/musicOpen.gif?v=120403" alt="">
+</div>
+<div id="loading" class="quanPing">
+    <img class="quanPing" src="img/loading/loadingBj.jpg?v=120403" alt="">
+    <img id="loadingRobot" src="img/loading/robot.png?v=120403" alt="">
+    <img id="loadingLogo" src="img/loading/loadingLogo.png?v=120403" alt="">
+
+    <div class="loadingYuanDiv">
+        <img class="loadingYuan" src="img/loading/yuan1.png?v=120403" alt="">
+        <img class="loadingYuan rotateClass" src="img/loading/yuan2.png?v=120403" alt="">
+        <p id="loadingProgress">1%</p>
+        <img id="LoadingPng" src="img/loading/Loading.png?v=120403" alt="">
+    </div>
+    <p id="tipWord">请打开声音，进入AI世界</p>
+</div>
+<div id="content"  class="quanPing">
+    <div id="timeLanDiv">
+        <img src='' data-src="img/content/timeLan.png?v=120403" alt="" id="timeLan">
+        <ul id="timeLanList">
+            <li class="timeLanLi " >
+                <img class="timeLanLiLine " src='' data-src="img/content/line.png?v=120403" alt="">
+                <img src='' data-src="img/content/1950.png?v=120403" alt="" class="yearNUM">
+            </li>
+            <li class="timeLanLi " >
+                <img class="timeLanLiLine" src='' data-src="img/content/line.png?v=120403" alt="">
+                <img src='' data-src="img/content/1956.png?v=120403" alt="" class="yearNUM">
+
+            </li>
+            <li class="timeLanLi" >
+                <img class="timeLanLiLine" src='' data-src="img/content/line.png?v=120403" alt="">
+                <img src='' data-src="img/content/1959.png?v=120403" alt="" class="yearNUM">
+
+            </li>
+            <li class="timeLanLi" >
+                <img class="timeLanLiLine" src='' data-src="img/content/line.png?v=120403" alt="">
+                <img src='' data-src="img/content/1997.png?v=120403" alt="" class="yearNUM">
+
+            </li>
+            <li class="timeLanLi" >
+                <img class="timeLanLiLine" src='' data-src="img/content/line.png?v=120403" alt="">
+                <img src='' data-src="img/content/1999.png?v=120403" alt="" class="yearNUM">
+
+            </li>
+            <li class="timeLanLi" >
+                <img class="timeLanLiLine" src='' data-src="img/content/line.png?v=120403" alt="">
+                <img src='' data-src="img/content/2013.png?v=120403" alt="" class="yearNUM">
+
+            </li>
+            <li class="timeLanLi" >
+                <img class="timeLanLiLine" src='' data-src="img/content/line.png?v=120403" alt="">
+                <img src='' data-src="img/content/2014.png?v=120403" alt="" class="yearNUM">
+
+            </li>
+            <li class="timeLanLi" >
+                <img class="timeLanLiLine" src='' data-src="img/content/line.png?v=120403" alt="">
+                <img id="yearNUM2016" src='' data-src="img/content/2016.png?v=120403" alt="" class="yearNUM">
+                <img id="yearNUM2017" src='' data-src="img/content/2017.png?v=120403" alt="" class="yearNUM">
+
+            </li>
+
+        </ul>
+    </div>
+
+    <div id="weiye" class="quanPing">
+        <div id="jiyu" class="quanPing">
+            <div id="paperDiv">
+                <img src='' data-src="img/content/paper.png?v=120403" alt="" id="zhi">
+                <img src='' data-src="img/content/title.png?v=120403" alt="" id="title">
+                <img class="fudiao" src='' data-src="img/content/fudiao.png?v=120403" alt="">
+                <img id="kuang" src='' data-src="img/content/kuang.png?v=120403" alt="">
+                <textarea class="input_text" cols="3"></textarea>
+                <img src='' data-src="img/content/xie.png?v=120403" alt="" id="xie">
+                <img src='' data-src="img/content/lan.png?v=120403" alt="" id="lan">
+                <ul id="choose">
+                    <li>
+                        <img src='' data-src="img/content/choose1.png?v=120403" alt="我想有个AI女朋友。">
+                    </li>
+                    <li>
+                        <img src='' data-src="img/content/choose2.png?v=120403" alt="我觉得AI能帮助人类超脱肉体，得到精神上的永生。">
+                    </li>
+                    <li>
+                        <img src='' data-src="img/content/choose3.png?v=120403" alt="我觉得AI能解放人性，让人更像人。">
+                    </li>
+                </ul>
+                <div class="choose_btn">
+                    <div class="block_btn" id="sure_btn">
+                        <img src='' data-src="img/body/sure_btn.png?v=120403" alt=""/>
+                    </div>
+                    <div class="block_btn" id="refresh_btn">
+                        <img src='' data-src="img/body/refresh.png?v=120403" alt="refresh"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="aircraft">
+            <img id="plane" src=''  class="plane1" data-src="img/content/aircraft.png?v=120403" alt=""/>
+            <img id="finger" src='' data-src="img/content/finger.png?v=120403" alt="" />
+            <img src='' data-src="img/content/planeFont.png?v=120403" id="planeFont" alt="">
+        </div>
+        <div id="share">
+            <!--<div class="leftDiv"></div>-->
+            <!--<div class="rightDiv"></div>-->
+            <!--<img src='' data-src="img/content/left.png?v=120403" class="left">-->
+            <!--<img src='' data-src="img/content/right.png?v=120403" class="right">-->
+            <div class="wrapper">
+                <img src='' data-src="img/content/paper.png?v=120403" alt="" class="paper">
+                <img src="http://img3.imgtn.bdimg.com/it/u=1731020431,1822703354&fm=27&gp=0.jpg"  class="advatar">
+                <div class="box">
+                    <img src='' data-src="img/content/line_box.png?v=120403" alt="" class="line_box">
+                    <div class="nickname" id="nickname"></div>
+                    <div id="myText" class="myText"></div>
+                </div>
+                <img src='' data-src="img/content/share.png?v=120403" alt="" class="share">
+                <img src='' data-src="img/content/agin.png?v=120403" alt="" class="agin">
+            </div>
+        </div>
+        <!--<div id="others">-->
+        <!--<div class="leftDiv"></div>-->
+        <!--<div class="rightDiv"></div>-->
+        <!--<img src='' data-src="img/content/left.png?v=120403" class="left">-->
+        <!--<img src='' data-src="img/content/right.png?v=120403" class="right">-->
+        <!--<div class="wrapper">-->
+        <!--<img src='' data-src="img/content/paper.png?v=120403" alt="" class="paper">-->
+        <!--<img class="advatar1">-->
+        <!--<div class="box">-->
+        <!--<img src='' data-src="img/content/line_box.png?v=120403" alt="" class="line_box">-->
+        <!--<div class="nickname" id="nickname1"></div>-->
+        <!--<div id="myText1" class="myText"></div>-->
+        <!--</div>-->
+        <!--<img src='' data-src="img/content/share.png?v=120403" alt="" class="share">-->
+        <!--<img src='' data-src="img/content/agin.png?v=120403" alt="" class="agin1">-->
+        <!--</div>-->
+        <!--</div>-->
+        <div id="mengban">
+            <img src='' data-src="img/content/mengPlane.png?v=120403" alt="" class="mengPlane">
+            <img src='' data-src="img/content/mengmiddle.png?v=120403" alt="" class="mengMiddle">
+            <img src='' data-src="img/content/mengFont.png?v=120403" alt="" class="mengFont">
+            <div id="close_x">
+                <img src="img/x.png?v=120403" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="container">
+</div>
+
+
+<script src="js/jquery.min.js?v=120403"></script>
+<!--<script src="js/weixin/config.js?v=120403"></script>-->
+<!--<script src="js/weixin/xShare.min.js?v=120403"></script>-->
+<script src="js/index.min.js?v=120403"></script>
+<!--<script src="js/index.js"></script>-->
+
+<!--<script src="js/weixin/wxUser.min.js?v=120403"></script>-->
+<!--<script src="js/weixin/util.min.js?v=120403"></script>-->
+
+<script >
+//    window.gg.wxUser.getUserInfo(function(res){
+//        console.log(res);
+//        if(res){
+//            $('.advatar').attr('src',res.headimgurl);
+//            $('#nickname').text(res.nickname);
+//            window.gg.config.user_info = res;
+//            console.log(window.gg.config.user_info);
+//        }
+//
+//
+//    });
+//    var myconfig={
+//        title: "一分钟看懂AI的前世今生", // 分享标题
+//        desc:"AI是什么？打哪儿来？往哪儿去？", // 分享描述
+//        link: window.location.href.split('?')[0].split('#')[0].replace('index.html','')+"weixin.html?v=120403", // 分享链接
+//        imgUrl: window.location.href.split('?')[0].split('#')[0].replace('index.html','')+'img/shareImg.png?v=120403', // 分享图标
+//        type: '', // 分享类型,music、video或link，不填默认为link
+//        dataUrl: ''// 如果type是music或video，则要提供数据链接，默认为空
+//    };
+//    console.log("myconfig",myconfig);
+//    window.shareManage && window.shareManage.init(myconfig);
+
+    $('#musicOpen').on('touchstart',function () {
+        $('#musicOpen').hide();
+        $('#musicClose').show();
+        $('#audioMusic')[0].pause()
+    });
+    $('#musicClose').on('touchstart',function () {
+        $('#musicClose').hide();
+        $('#musicOpen').show();
+        $('#audioMusic')[0].play();
+
+    });
+    $('#close_x').on('touchstart',function(){
+        $('#mengban').css('display','none');
+    })
+
+</script>
+<!--统计代码-->
+<script>
+    //秒针统计代码
+//    (function(){
+//        var mzcode="800756"; //根据项目在微数网站上的注册码替换
+//        //if(!_numRegExt.test(mzcode)){
+//        //     alert("请填写秒针统计活动代码!");
+//        //    return;
+//        //}
+//        var ga = document.createElement('script'); ga.type = 'text/javascript';
+//        ga.src = 'http://js.miaozhen.com/wx.1.0.js';
+//        ga.onload=function(){
+//            _mwx=window._mwx||{};
+//            //秒针的活动id
+//            _mwx.siteId=parseInt(mzcode);
+//            _mz_wx_view(1,0);
+//            _mwx.debug=true;
+//        }
+//        var body = document.getElementsByTagName('body')[0]; body.appendChild(ga);
+//    })();
+</script>
+
+<!--<script src='' data-src="js/three/three.js"></script>-->
+<!--<script src='' data-src="js/three/DDSLoader.js"></script>-->
+<!--<script src='' data-src="js/three/MTLLoader.js"></script>-->
+<!--<script src='' data-src="js/three/OBJLoader.js"></script>-->
+
+<!--<script src='' data-src="js/three/Detector.js"></script>-->
+<!--<script src='' data-src="js/three/stats.min.js"></script>-->
+<!--<script src='' data-src="js/main.js"></script>-->
+<!--<script src='' data-src="js/tweenjs-NEXT.min.js"></script>-->
+
+<script src="js/weiye.min.js?v=120403"></script>
+<!--<script src="js/three/three.js"></script>-->
+<!--<script src="js/three/DDSLoader.js"></script>-->
+<!--<script src="js/three/MTLLoader.js"></script>-->
+<!--<script src="js/three/OBJLoader.js"></script>-->
+<!--<script src="js/three/FBXLoader.js"></script>-->
+<!--<script src="js/three/Detector.js"></script>-->
+<!--<script src="js/three/stats.min.js"></script>-->
+<!--<script src="js/Tween.js"></script>-->
+<!--<script src="js/inflate.min.js"></script>-->
+<!--<script src="js/RequestAnimationFrame.js"></script>-->
+<!--<script type="text/javascript" src="js/tweenjs-NEXT.min.js"></script>-->
+<!--<script src="js/main.js"></script> -->
+
+</body>
+</html>

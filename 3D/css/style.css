@@ -1,0 +1,874 @@
+/*finger动画*/
+@keyframes finger
+{
+    0%   {transform: translate(0,0);}
+    20%  {transform: translate(1rem,-0.3rem);}
+    40%  {transform: translate(2rem,-0.9rem);}
+    60%  {transform: translate(3rem,-2rem);}
+    80%  {transform: translate(3.6rem,-4rem);}
+    100% {transform: translate(4rem,-6rem);}
+}
+@-moz-keyframes finger /* Firefox */
+{
+    0%   {transform: translate(0,0);}
+    20%  {transform: translate(1rem,-0.3rem);}
+    40%  {transform: translate(2rem,-0.9rem);}
+    60%  {transform: translate(3rem,-2rem);}
+    80%  {transform: translate(3.6rem,-4rem);}
+    100% {transform: translate(4rem,-6rem);}
+}
+@-webkit-keyframes finger /* Safari 和 Chrome */
+{
+    0%   {transform: translate(0,0);}
+    20%  {transform: translate(1rem,-0.3rem);}
+    40%  {transform: translate(2rem,-0.9rem);}
+    60%  {transform: translate(3rem,-2rem);}
+    80%  {transform: translate(3.6rem,-4rem);}
+    100% {transform: translate(4rem,-6rem);}
+}
+@-o-keyframes finger /* Opera */
+{
+    0%   {transform: translate(0,0);}
+    20%  {transform: translate(1rem,-0.3rem);}
+    40%  {transform: translate(2rem,-0.9rem);}
+    60%  {transform: translate(3rem,-2rem);}
+    80%  {transform: translate(3.6rem,-4rem);}
+    100% {transform: translate(4rem,-6rem);}
+}
+#aircraft>#finger{
+    position: absolute;
+    left: 0.3rem;
+    top: 25.8rem;
+    width: 3.7rem;
+    height: auto;
+    animation: finger 1.5s 0.5s linear infinite;
+    -moz-animation: finger 1.5s 0.5s linear infinite;
+    -webkit-animation: finger 1.5s 0.5s linear infinite;
+    -o-animation: finger 1.5s 0.5s linear infinite;
+}
+
+@keyframes jiyuCome
+{
+    0%   {opacity:0;transform: translateY(20rem);}
+    100% {opacity:1;transform: translateY(0);}
+}
+@-moz-keyframes jiyuCome /* Firefox */
+{
+    0%   {opacity:0;transform: translateY(20rem);}
+    100% {opacity:1;transform: translateY(0);}
+}
+@-webkit-keyframes jiyuCome /* Safari 和 Chrome */
+{
+    0%   {opacity:0;transform: translateY(20rem);}
+    100% {opacity:1;transform: translateY(0);}
+}
+@-o-keyframes jiyuCome /* Opera */
+{
+    0%   {opacity:0;transform: translateY(20rem);}
+    100% {opacity:1;transform: translateY(0);}
+}
+
+@keyframes jiyu
+{
+    0%   {opacity:1;transform: translateY(0) scale(1);}
+    100% {opacity:0;transform: translateY(5rem) scale(0.3);}
+}
+@-moz-keyframes jiyu /* Firefox */
+{
+    0%   {opacity:1;transform: translateY(0) scale(1);}
+    100% {opacity:0;transform: translateY(5rem) scale(0.3);}
+}
+@-webkit-keyframes jiyu /* Safari 和 Chrome */
+{
+    0%   {opacity:1;transform: translateY(0) scale(1);}
+    100% {opacity:0;transform: translateY(5rem) scale(0.3);}
+}
+@-o-keyframes jiyu /* Opera */
+{
+    0%   {opacity:1;transform: translateY(0) scale(1);}
+    100% {opacity:0;transform: translateY(5rem) scale(0.3);}
+}
+@keyframes aircraft
+{
+    0%   {opacity:0;transform: scale(0.2);}
+    30% {opacity:1;transform: scale(1) translateY(-40px)}
+    40% {transform: translateY(0)}
+    60% {transform: translateY(-40px)}
+    75% {transform: translateY(0)}
+    90% {transform: translateY(-40px)}
+    100% {transform: translateY(0)}
+}
+@-moz-keyframes aircraft /* Firefox */
+{
+    0%   {opacity:0;transform: scale(0.2);}
+    30% {opacity:1;transform: scale(1) translateY(-40px)}
+    40% {transform: translateY(0)}
+    60% {transform: translateY(-40px)}
+    75% {transform: translateY(0)}
+    90% {transform: translateY(-40px)}
+    100% {transform: translateY(0)}
+}
+@-webkit-keyframes aircraft /* Safari 和 Chrome */
+{
+    0%   {opacity:0;transform: scale(0.2);}
+    30% {opacity:1;transform: scale(1) translateY(-40px)}
+    40% {transform: translateY(0)}
+    60% {transform: translateY(-40px)}
+    75% {transform: translateY(0)}
+    90% {transform: translateY(-40px)}
+    100% {transform: translateY(0)}
+}
+@-o-keyframes aircraft /* Opera */
+{
+    0%  {opacity:0;transform: scale(0.2);}
+    30% {opacity:1;transform: scale(1) translateY(-40px)}
+    40% {transform: translateY(0)}
+    60% {transform: translateY(-40px)}
+    75% {transform: translateY(0)}
+    90% {transform: translateY(-40px)}
+    100% {transform: translateY(0)}
+}
+html, body {
+    width: 100%;
+    height: 100%;
+
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+textarea {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-appearance:none;
+    outline: none;
+    border: none;
+}
+
+#musicSwich{
+    position: absolute;
+    width: 1.2rem;
+    height: 1.2rem;
+    right: 1rem;
+    top: 1rem;
+    z-index: 10000;
+}
+#musicSwich>img{
+    width: 100%;
+    height: auto;
+    left: 0;
+    top: 0;
+    position: absolute;
+    display: none;
+}
+#musicSwich>#musicOpen{
+    display: block;
+}
+#loading{
+    display: none;
+}
+#container,#content{
+    display: none;
+}
+#tipWord{
+    font-size: 0.1rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 2%;
+    margin: auto;
+    text-align: center;
+}
+#weiye{
+    display: none;
+    background: url("../img/content/weiyeBG.jpg");
+    background-size: cover;
+}
+.quanPing {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+#loadingRobot {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+}
+
+#loadingLogo {
+    position: absolute;
+    width: 13.09375rem;
+    top: 0;
+    left: 0;
+}
+
+.loadingYuanDiv {
+    position: absolute;
+    width: 4.25rem;
+    height: 4.25rem;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 7%;
+}
+
+.loadingYuan {
+    position: absolute;
+    width: 4.25rem;
+    height: 4.25rem;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 0%;
+    top: 0;
+}
+
+#loadingProgress {
+    position: absolute;
+    /*background-color: aqua;*/
+    width: 1.5rem;
+    height: 1rem;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 0%;
+    top: 0;
+    color: white;
+    font-size: 0.5rem;
+    overflow: hidden;
+    line-height: 1rem;
+    text-align: center;
+
+}
+#LoadingPng{
+    position: absolute;
+    /*background-color: aqua;*/
+    width: 1.875rem;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 105%;
+}
+.rotateClass {
+    transform-origin: center;
+    -webkit-transform-origin: center;
+    animation: spin 2000ms infinite linear;
+    -moz-animation: spin 2000ms infinite linear; /* Firefox */
+    -webkit-animation: spin 2000ms infinite linear;/* Safari and Chrome */
+    -o-animation: spin 2000ms infinite linear;/* Opera */
+}
+@keyframes spin {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+@-moz-keyframes spin {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+@-o-keyframes spin {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+
+
+#timeLanDiv{
+    position: absolute;
+    right: 0;
+    top: 28.9%;
+    height: 37.059859%;
+    /*width: 1%;*/
+    /*background-image: url("../Assets/img/content/bg.jpg");*/
+}
+#timeLan{
+    /*position: absolute;*/
+    height: 100%;
+    right: 0;
+    top: 0%;
+}
+#timeLanList{
+    position: absolute;
+    height: 114.285714%;
+    width: 100%;
+    right: 0;
+    bottom: 0%;
+}
+li{
+    list-style: none;
+}
+.timeLanLi{
+    height: 12.5%;
+    width: 100%;
+    position: relative;
+}
+.timeLanLi:nth-child(9){
+    position: absolute;
+    top:87.5%;
+}
+
+.timeLanLiLine{
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    right: 0;
+    bottom: 0;
+}
+.yearNUM{
+    position: absolute;
+    width: 167.647059%;
+    left: -180%;
+    bottom: 10%;
+    opacity: 0;
+}
+#yearNUM2016{
+    display: block;
+}
+#yearNUM2017{
+    display: none;
+}
+
+
+.showTimeLine>.timeLanLiLine{
+    animation: timeLineShow 0.65s ease-out 0s 1 normal forwards;
+    -moz-animation: timeLineShow 0.65s ease-out 0s 1 normal forwards;    /* Firefox */
+    -webkit-animation: timeLineShow 0.65s ease-out 0s 1 normal forwards;    /* Safari 和 Chrome */
+    -o-animation: timeLineShow 0.65s ease-out 0s 1 normal forwards;    /* Opera */
+}
+@keyframes timeLineShow
+{
+    0%   {width: 100%;}
+    100% {width: 282.352941%;}
+}
+@-moz-keyframes timeLineShow /* Firefox */
+{
+    0%   {width: 100%;}
+    100% {width: 282.352941%;}
+}
+
+@-webkit-keyframes timeLineShow /* Safari 和 Chrome */
+{
+    0%   {width: 100%;}
+    100% {width: 282.352941%;}
+}
+
+@-o-keyframes timeLineShow /* Opera */
+{
+    0%   {width: 100%;}
+    100% {width: 282.352941%;}
+}
+
+
+
+
+.showTimeLine>.yearNUM{
+    animation: tyearNUMShow 0.85s linear 0.4s 1 normal forwards;
+    -moz-animation: tyearNUMShow 0.85s linear 0.4s 1 normal forwards;    /* Firefox */
+    -webkit-animation: tyearNUMShow 0.85s linear 0.4s 1 normal forwards;    /* Safari 和 Chrome */
+    -o-animation: tyearNUMShow 0.85s linear 0.4s 1 normal forwards;    /* Opera */
+}
+@keyframes tyearNUMShow
+{
+    0%   {opacity:0;}
+    100% {opacity:1;}
+}
+@-moz-keyframes tyearNUMShow /* Firefox */
+{
+    0%   {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-webkit-keyframes tyearNUMShow /* Safari 和 Chrome */
+{
+    0%   {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-o-keyframes tyearNUMShow /* Opera */
+{
+    0%   {opacity:0;}
+    100% {opacity:1;}
+}
+
+
+.hideTimeLine>.timeLanLiLine{
+    width: 282.352941%;
+    animation: timeLineHide 0.65s ease-out 0.45s 1 normal forwards;
+    -moz-animation: timeLineHide 0.65s ease-out 0.45s 1 normal forwards;    /* Firefox */
+    -webkit-animation: timeLineHide 0.65s ease-out 0.45s 1 normal forwards;    /* Safari 和 Chrome */
+    -o-animation: timeLineHide 0.65s ease-out 0.45s 1 normal forwards;    /* Opera */
+}
+@keyframes timeLineHide
+{
+    0%   {width: 282.352941%;}
+    100% {width: 100%;}
+}
+@-moz-keyframes timeLineHide /* Firefox */
+{
+    0%   {width: 282.352941%;}
+    100% {width: 100%;}
+}
+
+@-webkit-keyframes timeLineHide /* Safari 和 Chrome */
+{
+    0%   {width: 282.352941%;}
+    100% {width: 100%;}
+}
+
+@-o-keyframes timeLineHide /* Opera */
+{
+    0%   {width: 282.352941%;}
+    100% {width: 100%;}
+}
+
+
+.hideTimeLine>.yearNUM{
+    opacity: 1;
+    animation: tyearNUMHide 0.85s linear 0s 1 normal forwards;
+    -moz-animation: tyearNUMHide 0.85s linear 0s 1 normal forwards;    /* Firefox */
+    -webkit-animation: tyearNUMHide 0.85s linear 0s 1 normal forwards;    /* Safari 和 Chrome */
+    -o-animation: tyearNUMHide 0.85s linear 0s 1 normal forwards;    /* Opera */
+}
+@keyframes tyearNUMHide
+{
+    0%   {opacity:1;}
+    100% {opacity:0;}
+}
+@-moz-keyframes tyearNUMHide /* Firefox */
+{
+    0%   {opacity:1;}
+    100% {opacity:0;}
+}
+
+@-webkit-keyframes tyearNUMHide /* Safari 和 Chrome */
+{
+    0%   {opacity:1;}
+    100% {opacity:0;}
+}
+
+@-o-keyframes tyearNUMHide /* Opera */
+{
+    0%   {opacity:1;}
+    100% {opacity:0;}
+}
+
+@keyframes tipClick
+{
+    0%   {transform: translateY(-30px)}
+    50% {transform: translateY(0px)}
+    100% {transform: translateY(-30px)}
+}
+@-moz-keyframes tipClick /* Firefox */
+{
+    0%   {transform: translateY(-30px)}
+    50% {transform: translateY(0px)}
+    100% {transform: translateY(-30px)}
+}
+
+@-webkit-keyframes tipClick /* Safari 和 Chrome */
+{
+    0%   {transform: translateY(-30px)}
+    50% {transform: translateY(0px)}
+    100% {transform: translateY(-30px)}
+}
+
+@-o-keyframes tipClick /* Opera */
+{
+    0%   {transform: translateY(-30px)}
+    50% {transform: translateY(0px)}
+    100% {transform: translateY(-30px)}
+}
+
+@keyframes plane
+{
+    0%   {transform: translateY(0px) scale(1);}
+    50% {transform: scale(0.6);}
+    100% {transform: translateY(-10rem) scale(0.4);}
+}
+@-moz-keyframes plane /* Firefox */
+{
+    0%   {transform: translateY(0px) scale(1);}
+    50% {transform: scale(0.6);}
+    100% {transform: translateY(-10rem) scale(0.4);}
+}
+@-webkit-keyframes plane /* Safari 和 Chrome */
+{
+    0%   {transform: translateY(0px) scale(1);}
+    50% {transform: scale(0.6);}
+    100% {transform: translateY(-10rem) scale(0.4);}
+}
+@-o-keyframes plane /* Opera */
+{
+    0%   {transform: translateY(0px) scale(1);}
+    50% {transform: scale(0.6);}
+    100% {transform: translateY(-10rem) scale(0.4);}
+}
+/*share*/
+@keyframes share
+{
+    0%   {opacity: 0;transform: scale(0);}
+    40% {opacity: 0;transform: scale(0);}
+    100% {opacity: 1;transform: scale(1);}
+}
+@-moz-keyframes share /* Firefox */
+{
+    0%   {opacity: 0;transform: scale(0);}
+    40% {opacity: 0;transform: scale(0);}
+    100% {opacity: 1;transform: scale(1);}
+}
+@-webkit-keyframes share /* Safari 和 Chrome */
+{
+    0%   {opacity: 0;transform: scale(0);}
+    40% {opacity: 0;transform: scale(0);}
+    100% {opacity: 1;transform: scale(1);}
+}
+@-o-keyframes share /* Opera */
+{
+    0%   {opacity: 0;transform: scale(0);}
+    40% {opacity: 0;transform: scale(0);}
+    100% {opacity: 1;transform: scale(1);}
+}
+#wenan,#wenanImg{
+    display: block;
+    position: absolute;
+    width: 14.71875rem;
+    height: 6.4375rem;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.fudiao{
+    position: absolute;
+    width: 10.21875rem;
+    left: 0;
+    right: 0;
+    /*top: 0;*/
+    /*bottom: 115%;*/
+    margin: auto;
+}
+#wenan>.fudiao{
+    bottom: 115%;
+}
+#jiyu{
+    display: block;
+}
+#paperDiv,.paper{
+    display: block;
+    position: absolute;
+    width: 16.9375rem;
+    height: 27.65625rem;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    overflow: hidden;
+}
+#zhi{
+    position: absolute;
+    width: 16.9375rem;
+    height: 27.65625rem;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+#title{
+    position: absolute;
+    width: 14.28125rem;
+    left: 0;
+    right: 0;
+    top: 3rem;
+    margin: auto;
+}
+#paperDiv>.fudiao{
+    top:6.3rem;
+    width: 11.7rem;
+}
+#kuang{
+    position: absolute;
+    width: 10.5rem;
+    height: 5.6875rem;
+    left: 0;
+    right: 0;
+    top: 7.6rem;
+    margin: auto;
+}
+.input_text{
+    position: absolute;
+    width: 9.5rem;
+    height: 4.6875rem;
+    left: 0;
+    right: 0;
+    top: 7.6rem;
+    margin: auto;
+    background: transparent;
+    border: 0;
+    line-height: 1.5625rem;
+    padding: 0.5rem;
+    font-size: 0.85rem;
+    color: #5c6371;
+}
+.input_text:focus + #xie{
+    display: none;
+}
+#xie{
+    position: absolute;
+    width: 3.375rem;
+    left: 0;
+    right: 0;
+    top: 10rem;
+    margin: auto;
+}
+#lan{
+    position: absolute;
+    width: 4.15625rem;
+    left: 0;
+    right: 0;
+    top: 13.9rem;
+    margin: auto;
+}
+#choose{
+    position: absolute;
+    left: 3.2rem;
+    top: 15.5rem;
+}
+#choose>li:nth-child(1)>img{
+    width: 7.84375rem;
+}
+#choose>li:nth-child(2)>img{
+    width: 12.78125rem;
+}
+#choose>li:nth-child(3)>img{
+    width: 9.28125rem;
+}
+#choose>li{
+    margin-bottom: 0.41rem;
+}
+.choose_btn{
+    position: absolute;
+    left: 2.90625rem;
+    top: 22.202rem;
+    margin: auto;
+}
+.choose_btn>.block_btn:nth-of-type(1){
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 2.6875rem;
+}
+.choose_btn>.block_btn:nth-of-type(2){
+    position: absolute;
+    left: 6.09375rem;
+    top: 0;
+    height: 2.6875rem;
+}
+.choose_btn>.block_btn>img{
+    height: 2.6875rem;
+}
+#aircraft{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+#aircraft>#planeFont{
+    position: absolute;
+    left: 3.4rem;
+    top: 8.8rem;
+    width: 0.7rem;
+}
+#aircraft>#plane{
+    position: absolute;
+    left: 8.2rem;
+    top: 6.5rem;
+    width: 10rem;
+}
+#aircraft .plane1{
+    animation: aircraft 2s ease-in-out forwards;
+    -moz-animation: aircraft 2s ease-in-out forwards;
+    -webkit-animation: aircraft 2s ease-in-out forwards;
+    -o-animation: aircraft 2s ease-in-out forwards;
+}
+#aircraft .plane2{
+    animation: plane 2s linear forwards;
+    -moz-animation: plane 2s linear forwards;
+    -webkit-animation: plane 2s linear forwards;
+    -o-animation: plane 2s linear forwards;
+}
+.jiyuLeave{
+    animation: jiyu 0.4s  linear;
+    -moz-animation: jiyu 0.4s  linear;    /* Firefox */
+    -webkit-animation: jiyu 0.4s  linear;    /* Safari 和 Chrome */
+    -o-animation: jiyu 0.4s  linear;    /* Opera */
+}
+#share{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    animation: share 2.5s linear;
+    -moz-animation: share 2.5s linear;    /* Firefox */
+    -webkit-animation: share 2.5s linear;    /* Safari 和 Chrome */
+    -o-animation: share 2.5s linear;    /* Opera */
+}
+#others{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /*left: 0;*/
+    /*right: 0;*/
+    top: 0;
+    bottom: 0;
+    margin: auto;
+
+}
+.leftDiv{
+    position: absolute;
+    left: 0;
+    top: 16.5rem;
+    width: 1.6rem;
+    height: 1.65rem;
+    background-color: transparent;
+    z-index: 3;
+}
+.rightDiv{
+    position: absolute;
+    right: 0;
+    top: 16.5rem;
+    width: 1.6rem;
+    height: 1.65rem;
+    background-color: transparent;
+    z-index: 3;
+}
+.left{
+    position: absolute;
+    left: 0.625rem;
+    top: 17.125rem;
+    width: 0.5425rem;
+}
+.right{
+    position: absolute;
+    right: 0.625rem;
+    top: 17.125rem;
+    width: 0.5425rem;
+}
+.wrapper,.paper{
+    position: absolute;
+    width: 16.9375rem;
+    height: 27.65625rem;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.advatar,.advatar1{
+    position: absolute;
+    top: 5.75rem;
+    left: 6.48475rem;
+    width: 3.968rem;
+}
+.wrapper>.box{
+    position: absolute;
+    top: 9.21875rem;
+    left: 3.5rem;
+    width: 9.9375rem;
+}
+.wrapper>.box>img:nth-of-type(1){
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+.wrapper>.box>.myText{
+    position: absolute;
+    left: 0;
+    line-height: 1.6rem;
+    width: 8.9375rem;;
+    height: 5.739rem;
+    text-align: center;
+    color: #555c69;
+    font-size: 0.85rem;
+    font-family: "Adobe 黑体 Std R";
+    padding: 0.62rem 0.5rem 0.4rem;
+    background-color: transparent;
+}
+.wrapper>.box>.nickname{
+    position: absolute;
+    left: 0;
+    top: 0.8rem;
+    width: 100%;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    text-align: center;
+    color: #808a9e;
+    font-size: 0.55rem;
+    background-color: transparent;
+}
+.wrapper>.share{
+    position: absolute;
+    top: 18.90625rem;
+    left: 4.59375rem;
+    width: 7.75rem;
+}
+.wrapper>.agin,.wrapper>.agin1{
+    position: absolute;
+    top: 21.6625rem;
+    left: 4.59375rem;
+    width: 7.75rem;
+}
+#mengban{
+    z-index: 30;
+    display: none;
+    width: 20rem;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.88);
+}
+#mengban .mengPlane{
+    position: absolute;
+    top: 1.2rem;
+    right: 1.06rem;
+    width: 2.4rem;
+    height: auto;
+}
+#mengban .mengMiddle{
+    position: absolute;
+    top: 11rem;
+    left: 7rem;
+    width: 6rem;
+    height: auto;
+}
+#mengban .mengFont{
+    position: absolute;
+    bottom: 3.5rem;
+    right: 4.6rem;
+    width: 10.8rem;
+    height: auto;
+}
